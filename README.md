@@ -15,4 +15,4 @@ Esructura de directorios:
 
 ### Vercel
 
-La aplicación está alojada en una instancia de Vercel y se puede visitar en [este enlace](rooftop-revolution.vercel.app)
+La aplicación está alojada en una instancia de Vercel y se puede visitar en [este enlace](https://rooftop-revolution.vercel.app/)
