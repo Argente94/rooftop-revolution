@@ -10,5 +10,9 @@
         overflow: hidden;
         background-color: $background-color;
         padding: 30px;
+
+        @media screen and (max-width:480px){
+          padding: 15px;
+        }
     }
 </style>
