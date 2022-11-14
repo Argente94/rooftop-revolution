@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: $font-stack;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p{
+    margin: 0;
+}
+
+.center{
+    @include center;
+}
+
+.heading{
+    font-size: 2rem;
+    line-height: 1.15;
+    letter-spacing: -1px;
+
+    &--small{
+        font-size: 1.1rem;
+        margin: 0;
+    }
+}
+
+.text{
+    @include text;
+
+    &--large{
+        font-size: 1.5rem;
+    }
+}
+
+.text-field{
+    @include text-field;
+}
+
+.container{
+    @include container;
+}
+
+.columns{
+    @include columns;
+    @include vertical-align;
+}
+
+.stack{
+    @include stack;
+
+    &--small-gap{
+        @extend .stack;
+        grid-gap: $stack-gap-small;
+        gap: $stack-gap-small;
+    }
+    &--large-gap{
+        @extend .stack;
+        grid-gap: $stack-gap-large;
+        gap: $stack-gap-large;
+    }
+}
+
+.button{
+    @include button;
+
+    &--primary{
+        @extend .button;
+        color: $color-white;
+        background-color: $btn-primary-color;
+    }
+
+    &--primary:disabled{
+        @extend .button;
+        background-color: $btn-primary-color-disabled;
+        cursor: default;
+    }
+
+    &--primary:hover:not(:disabled){
+        @extend .button;
+        background-color: $btn-primary-color-dark;
+    }
+    
+}
+
+.form-card{
+    @include container;
+    box-shadow: 0 9px 18px $color-brown;
+    background: $color-white-dark;
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: $radius-med;
+}
+
+.client-card{
+    @include container;
+    max-width: 600px;
+    padding: 2rem;
+    background: $color-white;
+    border-radius: $radius-med;
+    border: 1px solid $color-gray-light;
+}
+
+.client-item{
+    @include columns;
+    font-size: 0.9rem;
+    grid-auto-columns: 0.5fr 0.5fr;
+
+    &:first-child{
+        border-top: 1px solid $color-gray-light;
+        padding-top: $stack-gap-small;
+    }
+
+    div:first-child{
+        font-weight: bold;
+    }
+}
+
+.client-offer{
+    border-top: 1px solid $color-gray-light;
+    padding-top: $stack-gap-small;
+}
