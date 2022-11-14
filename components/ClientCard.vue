@@ -38,13 +38,16 @@
         </div>
       </div>
     </div>
-    <div class="stack--small-gap">
+    <div v-if="clientAllowed" class="stack--small-gap">
       <h3 class="heading--small">
         Oferta
       </h3>
       <div class="client-offer">
         {{ clientOffer }}
       </div>
+    </div>
+    <div v-else class="stack--small-gap">
+      Lo sentimos, no cumples con las condiciones para acceder a este tipo de productos.
     </div>
   </div>
 </template>
@@ -80,12 +83,11 @@ export default Vue.extend({
       })
     },
 
-    clientOffer (): string {
-      /* Client not allowed to have solar products */
-      if (this.client.building_type !== 'house' || this.supplyPoint.neighbors.length === 0) {
-        return 'Lo sentimos, no cumples con las condiciones para acceder a este tipo de productos.'
-      }
+    clientAllowed (): boolean {
+      return this.client.building_type === 'house' && this.supplyPoint.neighbors.length > 0
+    },
 
+    clientOffer (): string {
       /* Client with Special discount */
       const totalInvoice = this.neighbors.reduce((acc, neighbor) => { return acc + parseInt(neighbor.supplyPoint.invoiced_amount) }, 0)
 

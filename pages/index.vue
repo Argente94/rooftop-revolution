@@ -81,7 +81,7 @@ export default Vue.extend({
       if (this.$store.getters.getClientByCups(this.cups) === null ||
       this.$store.getters.getSupplyPointByCups(this.cups) === null) {
         this.error = true
-        this.errorMessage = 'CUPS not found'
+        this.errorMessage = 'CUPS no encontrado'
       }
 
       this.ready = !this.error
