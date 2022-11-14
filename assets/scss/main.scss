@@ -24,6 +24,10 @@ p{
         font-size: 1.1rem;
         margin: 0;
     }
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.8rem;
+    }
 }
 
 .text{
@@ -91,6 +95,24 @@ p{
     max-width: 600px;
     padding: 2rem;
     border-radius: $radius-med;
+
+    .columns{
+        grid-auto-columns: 0.7fr 0.3fr;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 1rem;
+
+        .columns{
+            grid-auto-flow: row;
+            grid-auto-columns: auto;
+            justify-items: center
+        }
+
+        .text-field{
+            width: 100%;
+        }
+    }
 }
 
 .client-card{
@@ -100,6 +122,10 @@ p{
     background: $color-white;
     border-radius: $radius-med;
     border: 1px solid $color-gray-light;
+
+    @media screen and (max-width: 768px) {
+        padding: 1rem;
+    }
 }
 
 .client-item{

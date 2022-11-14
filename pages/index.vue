@@ -17,13 +17,13 @@
           </div>
         </div>
       </form>
-    </div>
-    <div class="container">
-      <div v-show="loading" class="text center">
-        Cargando...
+      <div class="container">
+        <div v-show="loading" class="text center">
+          Cargando...
+        </div>
+        <ClientCard v-show="ready" :cups="cups" />
+        <ErrorMessage v-show="error" :msg="errorMessage" />
       </div>
-      <ClientCard v-show="ready" :cups="cups" />
-      <ErrorMessage v-show="error" :msg="errorMessage" />
     </div>
   </div>
 </template>
